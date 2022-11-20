@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Слайдер https: указываем-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Gnezda</title>
+  </head>
+  <body>
+    <!-- Sprite -->
+    <svg style="display: none">
+      <symbol id="vk" viewBox="0 0 64 64">
+        <g id="Layer_11">
+          <path
+            class="st13"
+            d="M4,13.9c2.1,0,5.3,0,7.1,0c0.9,0,1.6,0.6,1.9,1.4c0.9,2.6,2.9,8.3,5.2,12.2c3.1,5.1,5.1,7,6.4,6.8   c1.3-0.3,0.9-3.7,0.9-6.4s0.3-7.3-1-9.4l-2-2.9c-0.5-0.7,0-1.6,0.8-1.6h11.4c1.1,0,2,0.9,2,2v14.5c0,0,0.5,2.6,3.3-0.1   c2.8-2.7,5.8-7.7,8.3-12.8l1-2.4c0.3-0.7,1-1.2,1.8-1.2h7.4c1.4,0,2.4,1.4,1.9,2.7l-0.8,2.1c0,0-2.7,5.4-5.5,9.2   c-2.8,3.9-3.4,4.8-3,5.8c0.4,1,7.6,7.7,9.4,10.9c0.5,0.9,0.9,1.7,1.3,2.4c0.7,1.3-0.3,3-1.8,3l-8.4,0c-0.7,0-1.4-0.4-1.7-1   l-0.8-1.3c0,0-5.1-6-8.2-7.9c-3.2-1.8-3.1,0.8-3.1,0.8v5.3c0,2.2-1.8,4-4,4h-2c0,0-11,0-19.8-13.1C5.1,26.7,2.8,20.1,2,16.3   C1.8,15.1,2.7,13.9,4,13.9z"
+          />
+        </g>
+      </symbol>
+
+      <symbol id="instagram" viewBox="0 0 1024 1024">
+        <g>
+          <g>
+            <path
+              clip-rule="evenodd"
+              d="M512.305,0.122c70.856,0,141.717-0.328,212.571,0.094     c66.662,0.398,129.269,15.6,183.515,56.125c70.84,52.923,107.091,125.214,113.838,212.445c2.376,30.7,1.637,61.667,1.677,92.512     c0.161,119.619,0.072,239.239,0.059,358.86c-0.005,48.856-6.799,96.557-27.473,141.232     c-41.938,90.623-115.091,140.165-211.608,157.334c-20.125,3.579-40.886,4.916-61.359,4.977     c-141.333,0.417-282.669,0.321-424.003,0.174c-73.495-0.075-140.713-19.483-197.994-67.166     c-58.197-48.439-88.907-111.793-98.46-186.071c-1.648-12.811-2.657-25.805-2.669-38.714     C0.261,583.352-0.636,434.771,0.82,286.214c0.796-81.166,27.822-153.13,88.244-209.835     c50.119-47.032,111.04-71.607,178.739-74.012c81.404-2.892,162.991-0.685,244.499-0.685     C512.303,1.161,512.303,0.641,512.305,0.122z M511.505,929.369c68.18,0,136.358,0.274,204.534-0.188     c17.83-0.121,35.919-1.007,53.414-4.171c66.827-12.081,117.634-45.6,144.26-110.67c13.528-33.055,17.946-68.524,18.522-102.876     c2.237-133.271,0.976-266.602,0.819-399.911c-0.018-14.442-0.174-29.045-2.217-43.295     c-9.163-63.988-36.903-116.435-95.792-148.329c-32.869-17.801-68.551-24.522-105.64-24.534     c-142.831-0.042-285.662-0.084-428.492,0.087c-12.908,0.016-25.93,0.73-38.702,2.525     c-72.746,10.214-126.329,46.066-153.145,116.6c-10.822,28.463-14.28,58.288-14.286,88.569     c-0.021,139.403-0.155,278.803,0.183,418.208c0.041,17.055,1.313,34.355,4.366,51.114     c13.543,74.355,55.004,125.461,128.843,146.011c24.606,6.845,50.909,9.868,76.522,10.384     C373.608,930.277,442.565,929.364,511.505,929.369z"
+              fill-rule="evenodd"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M775.903,510.369c-0.064,145.777-119.005,264.347-264.821,263.991     c-145.871-0.353-263.345-118.096-263.43-264.029C247.567,364.56,366.331,245.98,512.255,246.139     C656.921,246.295,775.968,365.605,775.903,510.369z M511.878,679.188c93.007,0.071,169.609-76.475,169.448-169.325     c-0.161-92.206-76.568-168.757-168.818-169.132c-92.873-0.377-169.438,75.935-169.635,169.074     C342.677,603.077,418.542,679.114,511.878,679.188z"
+              fill-rule="evenodd"
+            />
+            <path
+              clip-rule="evenodd"
+              d="M785.693,299.338c-33.019-0.295-59.047-26.717-58.941-59.832     c0.104-33.491,26.785-59.75,60.471-59.52c32.644,0.226,59.246,27.168,59.147,59.904     C846.27,273.09,819.174,299.637,785.693,299.338z"
+              fill-rule="evenodd"
+            />
+          </g>
+        </g>
+      </symbol>
+    </svg>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-inner">
+          <button class="burger" id="navToggle">
+            <span class="burger-item">Menu</span>
+          </button>
+          <!-- id="navToggle" для JS -->
+
+          <a href="#">
+            <img class="header-logo" src="img/header/logo.png" alt="" />
+          </a>
+
+          <nav class="nav" id="nav">
+            <!--  id="nav" для JS -->
+            <a class="nav-link" href="#" target="_blank" data-scroll="#about"
+              >О НАС</a
+            >
+            <!-- data-scroll="#aboutus" для клика по ней чтобы перейти к нужному разделу с id features для JS -->
+            <a class="nav-link" href="#" target="_blank" data-scroll="#photo"
+              >ФОТО</a
+            >
+            <a class="nav-link" href="#" target="_blank" data-scroll="#rules"
+              >ЦЕНА</a
+            >
+            <a class="nav-link" href="#" target="_blank" data-scroll="#location"
+              >КАК ДОБРАТЬСЯ</a
+            >
+            <a class="nav-link" href="#" target="_blank" data-scroll="#news"
+              >НОВОСТИ</a
+            >
+          </nav>
+
+          <div class="header-social">
+            <a
+              class="social-item"
+              href="https://vk.com/gnezda_ru"
+              target="_blank"
+            >
+              <svg class="social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="social-item"
+              href="https://www.instagram.com/gnezda.ru/"
+              target="_blank"
+            >
+              <svg class="social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- header-social -->
+        </div>
+        <!-- header-inner -->
+      </div>
+      <!-- container -->
+    </header>
+
+    <!-- ============================================================================ -->
+
+    <!-- Intro -->
+    <div class="intro" id="intro">
+      <!-- id="intro" Для доступа JS к нему -->
+      <div class="container">
+        <div class="intro-inner">
+          <h1 class="intro-title">Гостевые дома в лесу</h1>
+          <h2 class="intro-subtitle">
+            Проживание в 4х местном доме, оборудованным всем необходимым для
+            комфортного отдыха
+          </h2>
+          <a
+            class="btn btn--green"
+            target="_blank"
+            href="https://vk.com/im?media=market%2C-211209971_6597347%2C&message=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%09%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%B0%20%D1%8D%D1%82%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0.&sel=-211209971"
+            >ЗАБРОНИРОВАТЬ</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================================ -->
+
+    <!-- About -->
+
+    <div class="about" id="about">
+      <div class="container">
+        <div class="about-slider" id="aboutSlider">
+          <!-- ДЛЯ JS -->
+          <div class="slick-item">
+            <!-- Для JS дополнительный div нужен чтобы сбросить стили подключенного слайдера -->
+            <div class="about-item">
+              <div class="about-photo">
+                <img
+                  class="about-img about-img--one"
+                  src="img/about/1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="about-content">
+                <div class="about-text">Наша история</div>
+                <div class="about-author">
+                  <p>Всем привет, на связи Настя и Влад</p>
+                  <p>
+                    Мы строим гостевые дома A-frame в живописном месте в
+                    Липецкой области. Уже построили первый дом и запустились в
+                    мае!
+                  </p>
+                  <p>
+                    Хотим познакомиться с вами поближе и рассказать историю
+                    создания нашего проекта «ГНЁЗДА»
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- about-item -->
+          </div>
+          <div class="slick-item">
+            <!-- Для JS дополнительный div нужен чтобы сбросить стили подключенного слайдера -->
+            <div class="about-item">
+              <div class="about-photo">
+                <img
+                  class="about-img about-img--two"
+                  src="img/about/2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="about-content">
+                <div class="about-text">КАК ПРИШЛА ИДЕЯ?</div>
+                <div class="about-author">
+                  <p>
+                    Летом 2020 года мы искали место, чтобы отметить день
+                    рождения Влада. Так как у нас нет дачи, мы хотели арендовать
+                    симпатичный дом со своей территорией, но это оказалось очень
+                    сложно!
+                  </p>
+                  <p>
+                    В итоге мы нашли милый домик в деревне и вот так
+                    организовали день рождения
+                  </p>
+                  <p>
+                    И тогда мы поняли — нам нужно самим создать идеальное место
+                    для отдыха!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- about-item -->
+          </div>
+          <div class="slick-item">
+            <!-- Для JS дополнительный div нужен чтобы сбросить стили подключенного слайдера -->
+            <div class="about-item">
+              <div class="about-photo">
+                <img
+                  class="about-img about-img--three"
+                  src="img/about/3.png"
+                  width="450px"
+                  alt=""
+                />
+              </div>
+              <div class="about-content">
+                <div class="about-text">ЧТО БЫЛО ДАЛЬШЕ?</div>
+                <div class="about-author">
+                  <p>
+                    Сначала мы продумали концепцию проекта и планируемые
+                    объекты: комфортные A-frame дома, небольшой SPA-комплекс с
+                    чаном на улице, зоны отдыха, место для проведения камерных
+                    свадеб, фотозоны, экотропы, бассейн. Конечно, это все будет
+                    не сразу.
+                  </p>
+                  <p>
+                    Далее начался поиск участка, это было сложно и долго, но мы
+                    его нашли!
+                  </p>
+                  <p>Придумали название и сделали фирменный стиль</p>
+                  <p>
+                    Нашли архитектора, который сразу нас понял и наши вкусы
+                    совпали. Он помогает нам во многих вопросах: от разработки
+                    концепции гостевых домов до получения разрешения на
+                    строительство.
+                  </p>
+                  <p>
+                    Далее (помимо скучной бюрократии) мы провели коммуникации к
+                    участку: электричество и вода.
+                  </p>
+                  <p>
+                    Началась стройка первого дома A-frame и дома для
+                    администратора.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- about-item -->
+          </div>
+          <div class="slick-item">
+            <!-- Для JS дополнительный div нужен чтобы сбросить стили подключенного слайдера -->
+            <div class="about-item">
+              <div class="about-photo">
+                <img
+                  class="about-img about-img--four"
+                  src="img/about/4.png"
+                  width="450px"
+                  alt=""
+                />
+              </div>
+              <div class="about-content">
+                <div class="about-text">СЕЙЧАС</div>
+                <div class="about-author">
+                  <p>
+                    На данный момент мы заканчиваем ремонт первого дома, далее
+                    планируем обустройство территории и строительство еще 2х
+                    домов и SPA-комплекса.
+                  </p>
+                  <p>
+                    Теперь вы знаете о нас немного больше. Следите за новостями!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- about-item -->
+          </div>
+        </div>
+        <!-- aboutSlider -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- about -->
+
+    <!-- ============================================================================ -->
+
+    <!-- PHOTO-->
+
+    <div class="photo" id="photo">
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/1.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/2.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/3.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/4.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/5.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/6.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/7.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+      <div class="photo-item">
+        <img class="photo-photo" src="img/photo/8.jpg" alt="" />
+        <div class="photo-content">
+          <div class="photo-title">Больше фото</div>
+          <div class="photo-social">
+            <a
+              class="photo-social-item"
+              href="https://vk.com/album-211209971_283125281"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="photo-social-item"
+              href="https://www.instagram.com/stories/highlights/17886121619543103/"
+              target="_blank"
+            >
+              <svg class="photo-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- photo-social -->
+        </div>
+        <!-- photo-content -->
+      </div>
+      <!-- photo-item -->
+    </div>
+    <!-- photo -->
+
+    <!-- ============================================================================ -->
+
+    <!-- RULES -->
+
+    <div class="container">
+      <div class="rules" id="rules">
+        <div class="rules-item">
+          <img class="rules-img" src="img/rules/1.jpg" alt="" />
+        </div>
+        <div class="rules-item">
+          <div class="accordion">
+            <div class="accordion-item active" data-collapse="#rules-1">
+              <div class="accordion-header">
+                <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
+                <img class="accordion-icon" src="img/section/1.jpg" alt="" />
+                <div class="accordion-title">Цена</div>
+              </div>
+              <div class="accordion-content" id="rules-1">
+                <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
+                <ul class="border">
+                  <li>Стоимость проживания за сутки</li>
+                  <li>6500р/ПН-ЧТ</li>
+                  <li>8500р/ПТ-ВС</li>
+                  <li>Размещение питомца 500р</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="accordion-item" data-collapse="#rules-1">
+              <div class="accordion-header">
+                <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
+                <img class="accordion-icon" src="img/section/1.jpg" alt="" />
+                <div class="accordion-title">ПРАВИЛА БРОНИРОВАНИЯ</div>
+              </div>
+              <div class="accordion-content" id="rules-1">
+                <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
+                <ul class="border">
+                  <li>Дом на 4 человека</li>
+                  <li>Заезд с 15:00</li>
+                  <li>Выезд до 12:00</li>
+                  <li>Оплата брони 100%</li>
+                  <li>
+                    При отмене брони за 7 дней возвращается полная стоимость,
+                    менее 4х дней - сумма не возвращается
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="accordion">
+              <div class="accordion-item" data-collapse="#rules-2">
+                <div class="accordion-header">
+                  <img class="accordion-icon" src="img/section/1.jpg" alt="" />
+                  <div class="accordion-title">ПРАВИЛА РАЗМЕЩЕНИЯ</div>
+                </div>
+                <div class="accordion-content" id="rules-2">
+                  <ul class="border">
+                    <li>
+                      Дорогие гости, просим вас соблюдать правила при размещении
+                      в гостевых домах
+                    </li>
+                    <li>Бережно относиться к дому, мебели и природе</li>
+                    <li>Не курить внутри дома и не бросать окурки на земелю</li>
+                    <li>Не шуметь и не слушать громко музыку после 23:00</li>
+                    <li>
+                      При разведении огня - следить за ним и не оставлять без
+                      присмотра
+                    </li>
+                    <li>Не использовать конфетти, хлопушки и фейерверки</li>
+                    <li>
+                      Не выносить мебель из дома на улицу Не подъезжать на
+                      машине к домику
+                    </li>
+                    <li>
+                      Если вы хотите взять питомца с собой, напишете пожалуйста
+                      заранее
+                    </li>
+                    <li>
+                      Необходимо убирать за питомцем в специальные дог-пакеты
+                      (мы их выдаем)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item" data-collapse="#rules-3">
+                <div class="accordion-header">
+                  <img class="accordion-icon" src="img/section/1.jpg" alt="" />
+                  <div class="accordion-title">ЧТО ЕСТЬ В ДОМЕ</div>
+                </div>
+                <div class="accordion-content" id="rules-3">
+                  <ul class="border">
+                    <li>
+                      Дорогие гости, просим вас соблюдать правила при размещении
+                      в гостевых домах
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- accordion -->
+          </div>
+          <!-- accordion -->
+        </div>
+        <!-- rules-item -->
+      </div>
+      <!-- rules -->
+    </div>
+
+    <!-- ============================================================================ -->
+
+    <!-- MAP -->
+
+    <div class="map" id="location">
+      <div class="container">
+        <div class="map-inner">
+          <div class="map-content">
+            <div class="map-title">Как до нас добраться?</div>
+            <div class="map-link">
+              <ul class="map-link-list">
+                <li>Воронеж - 1 час 30 минут</li>
+                <li>Липец - 1 час 30 минут</li>
+                <li>Елец - 1 час 30 минут</li>
+              </ul>
+            </div>
+            <div class="map-address">Адрес:</div>
+            <div class="map-text">
+              Липецкая область, Усманский район, Поддубровский сельсовет, село
+              Поддубровка рядом с улицей Арзыбовка
+            </div>
+          </div>
+
+          <div class="map-map-one">
+            <script
+              type="text/javascript"
+              charset="utf-8"
+              async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A600f1244e13c35bebe9d86f39ff8ce1dd0293acd564c9a39322becfa3af0edf0&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"
+            ></script>
+          </div>
+          <div class="map-map-two">
+            <script
+              type="text/javascript"
+              charset="utf-8"
+              async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A600f1244e13c35bebe9d86f39ff8ce1dd0293acd564c9a39322becfa3af0edf0&amp;width=320&amp;height=240&amp;lang=ru_RU&amp;scroll=true"
+            ></script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================================ -->
+
+    <!-- Footer -->
+
+    <div class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-block">
+            <img class="footer-logo" src="img/footer/1.jpg" alt="" />
+          </div>
+          <!-- footer-block -->
+          <div class="footer-block">
+            <div class="footer-content">
+              <ul class="footer-nav-link">
+                <li>
+                  <a href="#" target="_blank" data-scroll="#about">О НАС</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" data-scroll="#photo">ФОТО</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" data-scroll="#rules">ЦЕНА</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" data-scroll="#news">НОВОСТИ</a>
+                </li>
+                <li>
+                  <a href="#" target="_blank" data-scroll="#location"
+                    >КАК ДОБРАТЬСЯ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- footer-block -->
+          <div class="footer-block">
+            <h4 class="footer-title">Контакты</h4>
+            <a class="footer-tel" href="tel: +7-(951)-554-777-0">
+              +7-(980)-538-91-27
+            </a>
+            <a
+              class="footer-social-item"
+              href="https://vk.com/gnezda_ru"
+              target="_blank"
+            >
+              <svg class="footer-social-icon">
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+            <a
+              class="footer-social-item"
+              href="https://www.instagram.com/gnezda.ru/"
+              target="_blank"
+            >
+              <svg class="footer-social-icon">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </a>
+          </div>
+          <!-- footer-block -->
+        </div>
+        <!-- footer-inner -->
+      </div>
+      <!-- container -->
+
+      <!-- Copyright -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="copyright-text">
+            <div>Copyright ©Gnezda, 2022 Все права защищены.</div>
+          </div>
+          <!-- copyright-text -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- copyright -->
+    </div>
+
+    <!-- ============================================================================ -->
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Слайдер и указать https: -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
