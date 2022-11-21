@@ -10,7 +10,7 @@ $(function() {
 	let scrollPos = $(window).scrollTop(); /* Присвоил переменной неше окно и сколько проскролили от верха страницы*/
 	let nav = $("#nav"); /* Переменная в которой сохранен элмент навигации */
 	let navToggle = $("#navToggle");
-	let clickPhoto = $("#photo-content");
+	let clickPhoto = $(".photo-item");
 
 	checkScroll(scrollPos, introH) /* Вызываем данную функцию при загрузке страницы load убрали */
 
@@ -96,12 +96,12 @@ $("[data-collapse]").on("click", function(event) {
 
 	/* ============================================================================== */
 
-	/* NAV TOGGLE */
+	/* ClickPhoto */
 	clickPhoto.on("click", function(event) {
 		event.preventDefault();
 
 		clickPhoto.toggleClass("showContent"); 
-	}); /* для id navToggle отслеживаем клик и сьрасываем сбрасываем стандартное поведение кнопки event event.preventDefault(); */
+	}); 
 
 });
 
