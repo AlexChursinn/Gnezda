@@ -98,8 +98,8 @@ $("[data-collapse]").on("click", function(event) {
 
 	/* ClickPhoto */
 	clickPhoto.on("click", function() {
-
 		clickPhoto.toggleClass("showContent"); 
+		clickPhoto.removeClass("showContent"); 
 	}); 
 
 });
