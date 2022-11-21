@@ -101,6 +101,6 @@ $("[data-collapse]").on("click", function(event) {
 		clickPhoto.toggleClass("showContent"); 
 		clickPhoto.removeClass("showContent"); 
 	}); 
-
+	
 });
 
