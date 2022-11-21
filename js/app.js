@@ -10,7 +10,7 @@ $(function() {
 	let scrollPos = $(window).scrollTop(); /* Присвоил переменной неше окно и сколько проскролили от верха страницы*/
 	let nav = $("#nav"); /* Переменная в которой сохранен элмент навигации */
 	let navToggle = $("#navToggle");
-	let clickPhoto = $(".photo-item");
+	let clickPhoto = $(".photo-content");
 
 	checkScroll(scrollPos, introH) /* Вызываем данную функцию при загрузке страницы load убрали */
 
