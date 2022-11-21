@@ -97,8 +97,7 @@ $("[data-collapse]").on("click", function(event) {
 	/* ============================================================================== */
 
 	/* ClickPhoto */
-	clickPhoto.on("click", function(event) {
-		event.preventDefault();
+	clickPhoto.on("click", function() {
 
 		clickPhoto.toggleClass("showContent"); 
 	}); 
