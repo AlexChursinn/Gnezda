@@ -993,7 +993,7 @@ body {
   height: 100%;
 
   background-color: rgba(114, 134, 106, 0.9);
-  opacity: 0; /* так как будем показывать при наводе на картинку */
+  opacity: 1; /* так как будем показывать при наводе на картинку */
 
   transition: opacity 0.2s linear;
 
