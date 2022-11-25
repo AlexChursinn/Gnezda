@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="description" content="Описание страницы" />
+    <meta name="keywords" content="ключивые слова" />
+    <meta name="robots" content="none" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +24,10 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <!-- Слайдер https: указываем-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <title>Gnezda</title>
   </head>
   <body>
@@ -79,7 +88,7 @@
               >ФОТО</a
             >
             <a class="nav-link" href="#" target="_blank" data-scroll="#rules"
-              >ЦЕНА</a
+              >ЦЕНЫ</a
             >
             <a class="nav-link" href="#" target="_blank" data-scroll="#location"
               >КАК ДОБРАТЬСЯ</a
@@ -539,7 +548,7 @@
             <div class="accordion-item active" data-collapse="#rules-1">
               <div class="accordion-header">
                 <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
-                <div class="accordion-title">Цена</div>
+                <div class="accordion-title">Цены</div>
               </div>
               <div class="accordion-content" id="rules-1">
                 <!-- data-collapse="#rules-1" при клики на шапку открываем айди контента -->
@@ -591,10 +600,8 @@
                       присмотра
                     </li>
                     <li>Не использовать конфетти, хлопушки и фейерверки</li>
-                    <li>
-                      Не выносить мебель из дома на улицу Не подъезжать на
-                      машине к домику
-                    </li>
+                    <li>Не выносить мебель из дома на улицу</li>
+                    <li>Не подъезжать на машине к домику</li>
                     <li>
                       Если вы хотите взять питомца с собой, напишете пожалуйста
                       заранее
@@ -612,7 +619,7 @@
                   <div class="accordion-title">ЧТО ЕСТЬ В ДОМЕ</div>
                 </div>
                 <div class="accordion-content" id="rules-3">
-                  <ul class="border">
+                  <ul class="border border-icon">
                     <li>WI-FI</li>
                     <li>Фен</li>
                     <li>Микроволновая печь</li>
@@ -655,9 +662,16 @@
             <div class="map-title">Как до нас добраться?</div>
             <div class="map-link">
               <ul class="map-link-list">
-                <li>Воронеж - 1 час 30 минут</li>
-                <li>Липецк - 1 час 30 минут</li>
-                <li>Елец - 1 час 30 минут</li>
+                <li>
+                  <i class="fa-solid fa-signs-post"></i>
+                  Воронеж - 1 час 30 минут
+                </li>
+                <li>
+                  <i class="fa-solid fa-signs-post"></i> Липецк - 1 час 30 минут
+                </li>
+                <li>
+                  <i class="fa-solid fa-signs-post"></i> Елец - 1 час 30 минут
+                </li>
               </ul>
             </div>
             <div class="map-address">Адрес:</div>
@@ -708,7 +722,7 @@
                   <a href="#" target="_blank" data-scroll="#photo">ФОТО</a>
                 </li>
                 <li>
-                  <a href="#" target="_blank" data-scroll="#rules">ЦЕНА</a>
+                  <a href="#" target="_blank" data-scroll="#rules">ЦЕНЫ</a>
                 </li>
                 <li>
                   <a href="#" target="_blank" data-scroll="#news">НОВОСТИ</a>
@@ -772,5 +786,12 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Слайдер и указать https: -->
     <script src="js/app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/14720f2bb4.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Подключили иконки с сайта -->
+
+    <!-- ============================================================================ -->
   </body>
 </html>
